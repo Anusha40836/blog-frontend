@@ -4,6 +4,9 @@ import { useNavigate, Link } from "react-router-dom";
 import API from "../api"; // ✅ use centralized API
 
 export default function RegisterPage() {
+  const bgImageUrl =
+    "https://images.pexels.com/photos/262508/pexels-photo-262508.jpeg";
+
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -26,7 +29,17 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="container mt-5" style={{ maxWidth: 400 }}>
+    <div
+      style={{
+        backgroundImage: `url(${bgImageUrl})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        minHeight: "100vh",
+        padding: 24,
+        color: "white", // Optional for contrast
+        backdropFilter: "brightness(0.7)", // Optional for readability
+      }}
+    >
       <h2>Register</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">

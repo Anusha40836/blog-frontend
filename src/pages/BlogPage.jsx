@@ -6,6 +6,9 @@ import PostForm from "../components/PostForm";
 import PostsList from "../components/PostsList";
 
 export default function BlogPage() {
+  const bgImageUrl =
+    "https://images.pexels.com/photos/3653849/pexels-photo-3653849.jpeg";
+
   const [posts, setPosts] = useState([]);
   const [editingPost, setEditingPost] = useState(null);
 
@@ -64,7 +67,17 @@ export default function BlogPage() {
   };
 
   return (
-    <>
+    <div
+      style={{
+        backgroundImage: `url(${bgImageUrl})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        minHeight: "100vh",
+        padding: 24,
+        color: "white", // Optional for contrast
+        backdropFilter: "brightness(0.7)", // Optional for readability
+      }}
+    >
       <Navbar />
       <div className="container mt-4">
         <h2 className="mb-4">Blog Posts</h2>
@@ -81,6 +94,6 @@ export default function BlogPage() {
           onDelete={handleDelete}
         />
       </div>
-    </>
+    </div>
   );
 }

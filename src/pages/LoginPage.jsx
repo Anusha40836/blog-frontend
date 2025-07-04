@@ -4,6 +4,9 @@ import { useNavigate, Link } from "react-router-dom";
 import API from "../api"; // ✅ import API instance
 
 export default function LoginPage() {
+  const bgImageUrl =
+    "https://images.pexels.com/photos/19825351/pexels-photo-19825351.jpeg";
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -28,7 +31,17 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="container mt-5" style={{ maxWidth: 400 }}>
+    <div
+      style={{
+        backgroundImage: `url(${bgImageUrl})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        minHeight: "100vh",
+        padding: 24,
+        color: "white", // Optional for contrast
+        backdropFilter: "brightness(0.7)", // Optional for readability
+      }}
+    >
       <h2>Login</h2>
 
       <form onSubmit={handleSubmit}>
